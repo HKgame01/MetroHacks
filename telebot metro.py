@@ -3,7 +3,7 @@ import telebot
 
 API_KEY = ""
 
-bot = telebot.TeleBot("")
+bot = telebot.TeleBot(API_KEY)
 print("Bot is running!")
 @bot.message_handler(commands=['start'])
 def greet(message):
@@ -68,7 +68,7 @@ def send_disease(message):
     disclamer = "DISCLAIMER: This might be totally wrong as it is guessed by a NLP program, we always recommend to consult to a doctor before going on any medication"
 
     bot.send_message(message.chat.id, f"Here you go:\n\nWe detected {bb[1]}\n\n\n{disclamer}")
-    print(f"symp:{gg}\nresponse:{hh}")
+    # print(f"symp:{gg}\nresponse:{hh}")
     
 
 bot.polling()
